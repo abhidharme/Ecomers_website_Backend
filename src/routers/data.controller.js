@@ -6,9 +6,9 @@ const router = express.Router();
 
 
 
-// router.get("/",async(req,res)=>{   
-//     res.send("Hello From the Abhi")
-// })
+router.get("/",async(req,res)=>{   
+    res.send("Hello From the Abhi")
+})
 
 // we will handle post request
 router.post("/cart" , async(req,res)=>{
