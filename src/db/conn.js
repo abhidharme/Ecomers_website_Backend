@@ -3,12 +3,15 @@ const express = require('express')
 
 require("dotenv").config();
 
+module.exports= ()=>{
 
-mongoose.connect(process.env.MONGODB_URL).then(()=>{
-    console.log("Connection Successful")
-}).catch((err)=>{
-    console.log(err.message)
-})
+    return mongoose.connect(process.env.MONGODB_URL)
+}
+// mongoose.connect(process.env.MONGODB_URL).then(()=>{
+//     console.log("Connection Successful")
+// }).catch((err)=>{
+//     console.log(err.message)
+// })
 
 //seccondtry
 //XdCz0jqHuVYylrfJ

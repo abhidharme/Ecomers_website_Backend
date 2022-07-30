@@ -1,15 +1,18 @@
 const express = require("express");
-require("../src/db/conn");
+const app = express();
+const cors = require("cors");
+require("dotenv").config();
+
+const connect =  require("../src/db/conn");
 
 const MensRanking = require("../src/models/mens")
+app.use(cors());
 
-
-const app = express();
 const PORT = process.env.PORT|| 3000;
 
 app.use(express.json())
 
-app.get("/",async(req,res)=>{
+app.get("/",async(req,res)=>{   
     res.send("Hello From the Abhi")
 })
 
@@ -83,10 +86,16 @@ app.delete("/mens/:id" , async(req,res)=>{
     }
 })
 
-app.post
 
-app.listen(PORT, () =>{
-    console.log(`connect is live at port nodemon, ${PORT}`)
+
+app.listen(PORT, async()=>{
+
+    try{
+        await connect();
+        console.log("DB is Connected..!")
+    }catch(err){
+        console.log("Err", err)
+    }
 })
 
 ////https://ecomdatafordemopart.herokuapp.com/
