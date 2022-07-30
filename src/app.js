@@ -9,12 +9,12 @@ const PORT = process.env.PORT|| 3000;
 
 app.use(express.json())
 
-// app.get("/",async(req,res)=>{
-//     res.send("Hello From the Abhi")
-// })
+app.get("/",async(req,res)=>{
+    res.send("Hello From the Abhi")
+})
 
 // we will handle post request
-app.post("/" , async(req,res)=>{
+app.post("/mens" , async(req,res)=>{
     try{
         const addingRecord =  new MensRanking(req.body)
         //console.log(req.body)
@@ -28,7 +28,7 @@ app.post("/" , async(req,res)=>{
 
 
 //get method
-app.get("/" , async(req,res)=>{
+app.get("/mens" , async(req,res)=>{
     try{
         const getData =  await MensRanking.find({});
             res.send(getData);
@@ -41,7 +41,7 @@ app.get("/" , async(req,res)=>{
 
 //get by id
 
-app.get("/:id" , async(req,res)=>{
+app.get("/mens/:id" , async(req,res)=>{
     try{
         const _id = req.params.id;
       //  const getData =  await MensRanking.findById({_id:_id}); // or
@@ -55,7 +55,7 @@ app.get("/:id" , async(req,res)=>{
 
 //patch by id
 
-app.patch("/:id" , async(req,res)=>{
+app.patch("/mens/:id" , async(req,res)=>{
     try{
         const _id = req.params.id;
       //  const getData =  await MensRanking.findById({_id:_id}); // or
@@ -71,7 +71,7 @@ app.patch("/:id" , async(req,res)=>{
 
 //delete by id
 
-app.delete("/:id" , async(req,res)=>{
+app.delete("/mens/:id" , async(req,res)=>{
     try{
         const _id = req.params.id;
       //  const getData =  await MensRanking.findById({_id:_id}); // or
