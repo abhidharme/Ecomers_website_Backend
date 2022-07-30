@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const express = require('express')
 
-mongoose.connect('mongodb+srv://mugil:mugil1207@cluster0.0h54tpb.mongodb.net/ecomdemo?retryWrites=true&w=majority').then(()=>{
+require("dotenv").config();
+
+
+mongoose.connect(process.env.MONGODB_URL).then(()=>{
     console.log("Connection Successful")
 }).catch((err)=>{
     console.log(err.message)
