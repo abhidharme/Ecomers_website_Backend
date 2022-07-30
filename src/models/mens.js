@@ -30,6 +30,6 @@ const menSchema = new mongoose.Schema({
 
 })
 //we are creating a new collection
-const MensRanking = new mongoose.model("menRanking" , menSchema )
 
-module.exports = MensRanking;
+
+module.exports = mongoose.model("menRanking", menSchema);
