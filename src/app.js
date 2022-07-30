@@ -9,9 +9,9 @@ const PORT = process.env.PORT|| 3000;
 
 app.use(express.json())
 
-// app.get("/",async(req,res)=>{
-//     res.send("Hello From the Abhi")
-// })
+app.get("/",async(req,res)=>{
+    res.send("Hello From the Abhi")
+})
 
 // we will handle post request
 app.post("/mens" , async(req,res)=>{
@@ -88,3 +88,6 @@ app.post
 app.listen(PORT, () =>{
     console.log(`connect is live at port nodemon, ${PORT}`)
 })
+
+////https://ecomdatafordemopart.herokuapp.com/
+//https://git.heroku.com/ecomdatafordemopart.git
