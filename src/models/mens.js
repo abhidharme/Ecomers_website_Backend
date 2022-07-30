@@ -1,9 +1,9 @@
-const { default: mongoose } = require("mongoose");
+const  mongoose  = require("mongoose");
 
 
 const menSchema = new mongoose.Schema({
       ranking:{
-        type:Number,
+        type:Object,
         required:true,
       },
        name:{

@@ -5,7 +5,7 @@ const MensRanking = require("../src/models/mens")
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT|| 3000;
 
 app.use(express.json())
 
@@ -85,6 +85,6 @@ app.delete("/mens/:id" , async(req,res)=>{
 
 app.post
 
-app.listen(port, () =>{
-    console.log(`connect is live at port nodemon, ${port}`)
+app.listen(PORT, () =>{
+    console.log(`connect is live at port nodemon, ${PORT}`)
 })
