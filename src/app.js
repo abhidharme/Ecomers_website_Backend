@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
 
-app.use("/", datacontroll);
+app.use("/cart", datacontroll);
 
 
 // app.get("/",async(req,res)=>{   
