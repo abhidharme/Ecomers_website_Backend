@@ -5,7 +5,11 @@ require("dotenv").config();
 
 module.exports= ()=>{
 
-    return mongoose.connect(process.env.MONGODB_URL)
+     mongoose.connect(process.env.MONGODB_URL).then(()=>{
+            console.log("Connection Successful")
+        }).catch((err)=>{
+            console.log(err.message)
+        })
 }
 // mongoose.connect(process.env.MONGODB_URL).then(()=>{
 //     console.log("Connection Successful")
